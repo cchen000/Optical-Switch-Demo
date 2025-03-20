@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optical Switch Network Demonstration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Optical Switch Network Demonstration</h1>
+        </header>
+        
+        <div class="controls">
+            <div class="mode-selector">
+                <button class="mode-btn active" data-mode="default">Default Mode</button>
+                <button class="mode-btn" data-mode="custom">Custom Mode</button>
+            </div>
+
+            <div class="custom-controls" style="display: none;">
+                <div class="control-group">
+                    <label for="layerCount">Layers:</label>
+                    <input type="number" id="layerCount" min="1" max="5" value="3">
+                </div>
+                <div class="control-group">
+                    <label for="switchPerLayer">Switches per Layer:</label>
+                    <input type="number" id="switchPerLayer" min="1" max="5" value="2">
+                </div>
+                <div class="control-group">
+                    <label for="portPerSwitch">Ports per Switch:</label>
+                    <input type="number" id="portPerSwitch" min="2" max="4" value="2" step="2">
+                </div>
+                <button id="applyCustomConfig">Apply Configuration</button>
+            </div>
+        </div>
+        
+        <div class="network-container">
+            <div class="inputs">
+                <!-- 输入端口将通过JS动态生成 -->
+            </div>
+            
+            <div class="switch-network" id="switchNetwork">
+                <!-- 开关网络将通过JS动态生成 -->
+            </div>
+            
+            <div class="outputs">
+                <!-- 输出端口将通过JS动态生成 -->
+            </div>
+        </div>
+        
+        <div class="info-panel">
+            <h3>Signal Path</h3>
+            <div id="signalPath">Click on an input port to view the signal path</div>
+            
+            <h3>Port Connection Map</h3>
+            <div id="connectionMapping">Click on any input port or switch to view all connection relationships</div>
+        </div>
+        
+        <!-- 连接状态配置菜单 -->
+        <div class="connection-config-menu" id="connectionConfigMenu" style="display: none;">
+            <div class="menu-header">Select Connection State</div>
+            <div class="menu-items" id="connectionMenuItems">
+                <!-- 连接状态项将通过JS动态生成 -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
