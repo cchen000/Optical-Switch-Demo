@@ -516,4 +516,215 @@ input[type="number"] {
     overflow-x: auto;
     color: #444;
     border-radius: 2px;
+}
+
+/* 输入源信息样式 */
+.input-source-info {
+    font-size: 11px;
+    color: #777;
+    margin-top: 3px;
+    font-style: italic;
+    text-align: right;
+}
+
+/* 波长相关样式 */
+.wavelength-info {
+    font-size: 12px;
+    color: #3498db;
+    margin-top: 4px;
+    padding: 2px 4px;
+    background-color: rgba(52, 152, 219, 0.1);
+    border-radius: 3px;
+}
+
+.wavelength-indicator {
+    font-weight: bold;
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.wavelength-dialog {
+    position: absolute;
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    width: 300px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.dialog-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+.wavelength-groups {
+    margin-bottom: 15px;
+}
+
+.wavelength-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #f8f9fa;
+    border-radius: 3px;
+}
+
+.group-content {
+    flex: 1;
+}
+
+.delete-group-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 3px 6px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.add-group-area {
+    margin-top: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+}
+
+.wavelength-selector {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.wavelength-checkbox {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+.wavelength-checkbox.disabled {
+    opacity: 0.5;
+}
+
+.wavelength-checkbox.disabled label {
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.add-group-btn, .confirm-btn {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.confirm-btn {
+    background-color: #3498db;
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.wavelength-path-info {
+    margin: 5px 0 10px 0;
+    padding: 5px;
+    background-color: #f0f8ff;
+    border-left: 3px solid #3498db;
+    font-style: italic;
+}
+
+/* 连接编辑模式样式 */
+.edit-mode-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 10px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.edit-mode-btn.active {
+    background-color: #f44336;
+}
+
+.edit-mode-btn:hover {
+    opacity: 0.9;
+}
+
+.clear-connections-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 10px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.clear-connections-btn:hover {
+    background-color: #e65100;
+}
+
+.connection-edit-controls {
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+/* 编辑模式下的端口样式 */
+.connection-edit-mode .switch-port.edit-mode {
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.connection-edit-mode .switch-port.edit-mode:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 8px rgba(33, 150, 243, 0.8);
+}
+
+/* 源端口被选中时的样式 */
+.switch-port.source-selected {
+    background-color: #ff9800;
+    box-shadow: 0 0 12px #ff9800;
+    animation: pulse 1.5s infinite;
+}
+
+/* 脉冲动画效果 */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 152, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 152, 0, 0);
+    }
+}
+
+/* 编辑模式下的提示样式 */
+.connection-edit-mode #signalPath {
+    background-color: #fff3e0;
+    border-left: 4px solid #ff9800;
+    padding: 10px 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.connection-edit-mode #signalPath strong {
+    color: #e65100;
+    font-weight: bold;
 } 

@@ -14,24 +14,44 @@
         
         <div class="controls">
             <div class="mode-selector">
-                <button class="mode-btn active" data-mode="default">Default Mode</button>
-                <button class="mode-btn" data-mode="custom">Custom Mode</button>
+                <button class="mode-btn active" data-mode="default">默认模式</button>
+                <button class="mode-btn" data-mode="custom">自定义模式</button>
             </div>
 
             <div class="custom-controls" style="display: none;">
                 <div class="control-group">
-                    <label for="layerCount">Layers:</label>
+                    <label for="layerCount">层数:</label>
                     <input type="number" id="layerCount" min="1" max="5" value="3">
+                    <button id="generateLayerTable">生成配置表</button>
                 </div>
-                <div class="control-group">
-                    <label for="switchPerLayer">Switches per Layer:</label>
-                    <input type="number" id="switchPerLayer" min="1" max="5" value="2">
+                
+                <div class="layer-config-table" id="layerConfigTable" style="display: none;">
+                    <h3>层配置表</h3>
+                    <table id="layerParamsTable">
+                        <thead>
+                            <tr>
+                                <th>参数/层</th>
+                                <!-- 动态生成列头 -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr id="switchesCountRow">
+                                <td>开关数量</td>
+                                <!-- 动态生成单元格 -->
+                            </tr>
+                            <tr id="inputPortsRow">
+                                <td>输入端口数</td>
+                                <!-- 动态生成单元格 -->
+                            </tr>
+                            <tr id="outputPortsRow">
+                                <td>输出端口数</td>
+                                <!-- 动态生成单元格 -->
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="control-group">
-                    <label for="portPerSwitch">Ports per Switch:</label>
-                    <input type="number" id="portPerSwitch" min="2" max="4" value="2" step="2">
-                </div>
-                <button id="applyCustomConfig">Apply Configuration</button>
+                
+                <button id="applyCustomConfig">应用配置</button>
             </div>
         </div>
         
@@ -50,16 +70,16 @@
         </div>
         
         <div class="info-panel">
-            <h3>Signal Path</h3>
-            <div id="signalPath">Click on an input port to view the signal path</div>
+            <h3>信号路径</h3>
+            <div id="signalPath">点击输入端口查看信号路径</div>
             
-            <h3>Port Connection Map</h3>
-            <div id="connectionMapping">Click on any input port or switch to view all connection relationships</div>
+            <h3>端口连接映射</h3>
+            <div id="connectionMapping">点击任意输入端口或开关查看所有连接关系</div>
         </div>
         
         <!-- 连接状态配置菜单 -->
         <div class="connection-config-menu" id="connectionConfigMenu" style="display: none;">
-            <div class="menu-header">Select Connection State</div>
+            <div class="menu-header">选择连接状态</div>
             <div class="menu-items" id="connectionMenuItems">
                 <!-- 连接状态项将通过JS动态生成 -->
             </div>
